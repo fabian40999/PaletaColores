@@ -1,0 +1,133 @@
+*{margin: 0; padding: 0;}
+
+body{
+    
+    background: #add5fa;
+    color: #000000;
+}
+
+#contenedor 
+{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+
+    display: grid;
+    /*grid: gap 20px;*/
+
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    /*
+    grid-template-areas:
+    "header header header"
+    "contenido contenido sidebar"
+    "widget-1 widget-2 sidebar"
+    "footer footer footer"
+    */
+}
+
+.bordes{
+
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    
+}
+
+#header
+{
+    background: #ff637d;
+    color: #fff;
+    /*grid-area: header;*/
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+#contenido
+{
+    /*grid-area: contenido;*/
+    grid-column: span 2;
+
+}
+
+#sidebar
+{
+    grid-column: 3 / 4;
+    background: #66d7d1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: 2 / 4;
+}
+
+/*
+#widget-1{
+    grid-area: widget-1;
+}
+
+#widget-2{
+    grid-area: widget-2;
+}
+*/
+
+.wid{
+    background: #eaf2e3;
+    color: #000000;
+    height: 100px;
+    text-align: center;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+#footer
+{
+    background: #fff87f;
+    color: #000000;
+    grid-column: span 3;
+}
+
+/*-------------------------------------------@media---------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+    
+    /*
+    #contenedor
+    {
+        grid-template-areas: "header header header"
+                             "sidebar sidebar sidebar"   
+                             "widger-1 widget-1 widget-2"
+                             "footer footer footer";
+
+
+    }
+    */
+
+    #contenedor
+    {
+        grid-column: 1 / -1;
+
+    }
+
+    #sidebar
+    {
+        grid-column: span 3;
+    }
+
+    .wid{
+        grid-column: span 3;
+    }
+
+    #footer{
+        grid-column: span 3;
+    }
+
+
+
+
+} 
